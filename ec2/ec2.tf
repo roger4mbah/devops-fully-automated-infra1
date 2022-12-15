@@ -22,6 +22,7 @@ variable "key_pair_name" {
 resource "aws_security_group" "ec2_sg" {
   name        = join("", [var.name, "-", "ec2-sg"])
   description = "Allow  traffic for http and ssh"
+  vpc_id = "vpc-078ac0c382267e2ce"
 
 
   ingress {
