@@ -28,29 +28,33 @@ resource "aws_security_group" "ec2_sg" {
   ingress {
     from_port   = 22
     to_port     = 22
+    description = "allow secure shell"
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["192.168.1.133/32"]
   }
 
   ingress {
+    description = "allow port 9100"
     from_port   = 9100
     to_port     = 9100
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["192.168.1.134/32"]
   }
 
   ingress {
+    description = "allow port 8080"
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["192.168.1.134/32"]
   }
 
   egress {
+    description = "allow port 0"
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["192.168.1.134/32"]
   }
 }
 
