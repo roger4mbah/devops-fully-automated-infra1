@@ -100,7 +100,6 @@ resource "aws_instance" "web_server" {
 
 }
 
-output "amiidinfo" {
-  value = data.aws_ami.web_ami
+
   
-}
+
