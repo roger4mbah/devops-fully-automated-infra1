@@ -92,11 +92,10 @@ resource "aws_instance" "web_server" {
   ebs_optimized = true
   root_block_device {
     encrypted = true
-
+  }
   metadata_options {
     http_endpoint = "enabled"
     http_tokens = "required"
-  }
   }
 
 }
